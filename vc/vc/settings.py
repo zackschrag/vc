@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
+    'vc_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,9 +60,9 @@ WSGI_APPLICATION = 'vc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'velocichapter',
-	'USER': 'vcadmin',
-	'PASSWORD': 'din0s@ur',
+        'NAME': 'vc-db',
+	'USER': 'vc-mgr',
+	'PASSWORD': 'din0m@n@ger',
 	'HOST': 'localhost',
 	'PORT': '',
     }
