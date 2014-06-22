@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static "lib/bootstrap/css/bootstrap.min.css" %}" />
+        <script src="{% static "lib/jquery.js" %}"></script>
+        <script src="{% static "lib/bootstrap/js/bootstrap.min.js" %}"></script>
+        <link href="{% static "css/signin.css" %}" rel="stylesheet">
+        <title>{% block title %}VelociChapter{% endblock %}</title>
+    </head>
+<body>
+	<div class="container">
+
+	{% if form.errors %}
+		<p>Your username and password didn't match, please try again.</p>
+	{% endif %}
+
+		<form class="form-signin" role="form" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input type="username" class="form-control" placeholder="Username" required="" autofocus="">
+
+			<input type="password" class="form-control" placeholder="Password" required="">-->
+			{{ form.username }}
+			{{ form.password }}
+
+			<label class="checkbox">
+				<input type="checkbox" value="remember-me"> Remember me
+			</label>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+			{% if next %}
+				<input type="hidden" name="next" value="{{ next }}" />
+			{% else %}
+				<input type="hidden" name="next" value="/messages/" />
+			{% endif %}
+		</form>
+	</div>
+</body>
+</html>

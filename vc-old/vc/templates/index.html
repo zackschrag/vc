@@ -1,0 +1,55 @@
+{% extends 'base_without_nav.html' %}
+{% block content %}
+<h1>Index</h1>
+{% comment %}
+{% url 'vc.views.register' as register_url %}
+{% endcomment %}
+
+{% comment %}
+<a id="register-chapter-button" href="{{ register_url }}" data-toggle="modal" data-target="#register-chapter-modal">
+	<button class="btn btn-default" >Sign up your chapter</button>
+</a>
+
+<a id="register-chapter-button" data-toggle="modal" data-target="#register-chapter-modal">
+	<button class="btn btn-default" >Sign up your chapter</button>
+</a>
+<button class="btn btn-default">Join a chapter</button>
+
+<div class="modal fade" id="register-chapter-modal" tabindex="-1" role="dialog" aria-labelledby="register-chapter-modal-label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div id="register-chapter-modal-content" class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3 class="modal-title" id="register-chapter-label">Register Your Chapter</h3>
+		</div>
+		<div class="modal-body">
+			<h3>blah blah</h3>
+			<form id="user_form" method="post"
+		    enctype="multipart/form-data">
+
+		    {% csrf_token %}
+
+		            <!-- Display each form. The as_p method wraps each element in a paragraph
+		                 (<p>) element. This ensures each element appears on a new line,
+		                 making everything look neater. -->
+		    {{ user_form.as_p }}
+
+		            <!-- Provide a button to click to submit the form. -->
+		    <input type="submit" name="submit" value="Register" />
+		</form>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+		</div>
+	</div>
+</div>
+{% endcomment %}
+
+{% url 'vc.views.register' as register_url %}
+<a id="register-chapter-button" href="{{ register_url }}">
+	<button class="btn btn-default" >Sign up your chapter</button>
+</a>
+<button class="btn btn-default">Join a chapter</button>
+{% endblock %}

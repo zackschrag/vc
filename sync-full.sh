@@ -2,6 +2,6 @@
 
 while true
 do
-		rsync --progress --delete --exclude="sync*.sh" -avze ssh ../vc/ $1:/webapps/vc-mgr/
+		rsync --progress --delete --exclude="sync*.sh" --exclude="migrations/*" -avze ssh ../vc/ $1:/webapps/vc-mgr/
 		sleep 1
 done

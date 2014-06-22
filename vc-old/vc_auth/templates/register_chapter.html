@@ -1,0 +1,19 @@
+{% extends 'base_page.html' %}
+{% block content %}
+<h1>Register your chapter VelociChapter</h1>
+
+{% if registered %}
+<h3>Invite members</h>
+{% else %}
+
+<form id="chapter_form" method="post"
+    enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ chapter_form.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+    <input type="submit" name="submit" value="Register" />
+</form>
+{% endif %}
+{% endblock %}
