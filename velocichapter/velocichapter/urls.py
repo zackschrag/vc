@@ -13,6 +13,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^messages/', include('vc_messages.urls')),
 
-    url(r'^login/', 'django.contrib.auth.views.login'),
+    url(r'^login/', 'velocichapter.views.user_login'), #'django.contrib.auth.views.login'),
     url(r'^logout/$', 'velocichapter.views.logout_page'),
 )
